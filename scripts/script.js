@@ -32,12 +32,11 @@ recipesList.addEventListener("click", (e) => {
 function renderRoute() {
   const route = getRoute();
   console.log(route);
+  window.scrollTo({ top: 0 });
 
   if (route.page === "home") {
     homePage.hidden = false;
     recipePage.hidden = true;
-
-    window.scrollTo({ top: 0 });
     return;
   }
 
@@ -60,7 +59,6 @@ function renderRoute() {
 
     homePage.hidden = true;
     recipePage.hidden = false;
-    window.scrollTo({ top: 0 });
   }
 }
 renderRoute();
