@@ -10,18 +10,18 @@ export function renderRecipe(recipe) {
                 <div class="recipe-information text-md">
                   <div class="recipe-data">
                     <img
-                      src="./assets/clock.svg"
+                      src="/assets/clock.svg"
                       alt="clock"
                       class="icon"
                     />
                     <span>${recipe.time}</span>
                   </div>
                   <div class="recipe-data">
-                    <img src="./assets/fire.svg" alt="fire" class="icon" />
+                    <img src="/assets/fire.svg" alt="fire" class="icon" />
                     <span>${recipe.calories}</span>
                   </div>
                   <div class="recipe-data">
-                    <img src="./assets/star.svg" alt="star" class="icon" />
+                    <img src="/assets/star.svg" alt="star" class="icon" />
                     <span>${recipe.rating} (${recipe.review})</span>
                   </div>
                 </div>
