@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="home-section">
+      <h1>Io sono la sezione Home</h1>
+    </section>
+    <section id="recipe-section" hidden>
+      <h1>Io sono la sezione Ricetta</h1>
+      <article class="card"></article>
+      <button id="home">Torna alla Home</button>
+    </section>
+    <script>
+      const recipes = [
+        {
+          id: 1,
+          title: "Spaghetti alla Carbonara",
+          category: "Pasta",
+          time: 20,
+        },
+        {
+          id: 2,
+          title: "Lasagne alla Bolognese",
+          category: "Pasta",
+          time: 90,
+        },
+        {
+          id: 3,
+          title: "Risotto ai Funghi",
+          category: "Riso",
+          time: 35,
+        },
+        {
+          id: 4,
+          title: "Parmigiana di Melanzane",
+          category: "Verdure",
+          time: 60,
+        },
+        {
+          id: 5,
+          title: "Pollo al Curry",
+          category: "Carne",
+          time: 40,
+        },
+        {
+          id: 6,
+          title: "Tiramisù",
+          category: "Dolci",
+          time: 30,
+        },
+        {
+          id: 7,
+          title: "Pizza Margherita",
+          category: "Pizza",
+          time: 120,
+        },
+        {
+          id: 8,
+          title: "Gnocchi al Pesto",
+          category: "Pasta",
+          time: 25,
+        },
+        {
+          id: 9,
+          title: "Frittata di Zucchine",
+          category: "Uova",
+          time: 15,
+        },
+        {
+          id: 10,
+          title: "Cheesecake ai Frutti di Bosco",
+          category: "Dolci",
+          time: 45,
+        },
+      ];
+      const home = document.querySelector("#home-section");
+      const recipe = document.querySelector("#recipe-section");
+      const card = recipe.querySelector(".card");
+      console.log(card);
+      const btnHome = document.querySelector("#home");
+      const title = document.querySelector("#title");
+      btnHome.addEventListener("click", () => {
+        navigate("/prova.html");
+      });
+
+      window.addEventListener("popstate", handleRoute);
+      createButtons();
+
+      home.addEventListener("click", (e) => {
+        const btn = e.target.closest(".btn");
+        if (!btn) {
+          return;
+        }
+        const id = +btn.dataset.id;
+        navigate(`/recipe/${id}`);
+      });
+
+      function handleRoute() {
+        const path = location.pathname;
+        if (path === "/prova.html") {
+          home.hidden = false;
+          recipe.hidden = true;
+          return;
+        }
+        if (path.startsWith("/recipe/")) {
+          const id = getRecipeId();
+          renderRecipe(id);
+          home.hidden = true;
+          recipe.hidden = false;
+          return;
+        }
+      }
+
+      function createButtons() {
+        for (let i = 1; i <= 10; i++) {
+          const button = document.createElement("button");
+          button.innerText = `Ricetta ${i}`;
+          button.dataset.id = i;
+          button.classList.add("btn");
+          home.appendChild(button);
+        }
+      }
+      function renderRecipe(id) {
+        const recipe = recipes.find((recipe) => Number(id) === recipe.id);
+        if (!recipe) {
+          card.innerHTML = "<h2>Ricetta non trovata</h2>";
+          return;
+        }
+        card.innerHTML = `
+        <h2>${recipe.title}</h2>
+        <p>Categoria: ${recipe.category}</p>
+        <p>Tempo di preparazione: ${recipe.time}</p>
+        `;
+      }
+
+      function getRecipeId() {
+        return Number(location.pathname.split("/")[2]);
+      }
+
+      function navigate(url) {
+        history.pushState({}, "", url);
+        handleRoute();
+      }
+    </script>
+  </body>
+</html>

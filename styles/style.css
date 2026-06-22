@@ -1,0 +1,219 @@
+@layer reset, base, components, utilities;
+
+@layer base {
+  :root {
+    --white: hsl(0, 0%, 100%);
+    --gray: hsl(330, 20%, 92%);
+    --orange: hsl(36, 93%, 54%);
+    --black: hsl(0, 0%, 0%);
+    --shadow: 0px 4px 4px hsla(0, 0%, 0%, 0.25);
+
+    --font: "Montserrat", sans-serif;
+    --font-size-title: 2.75rem;
+    --font-size-subtitle: 1.125rem;
+    --font-size-logo: 1.875rem;
+    --font-size-title-card: 1.25rem;
+    --font-size-body: 1rem;
+    --font-size-small: 0.75rem;
+    --font-size-button: 0.875rem;
+
+    --padding: 2rem;
+    --padding-nav: 1.25rem;
+    --margin: 1rem;
+
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font);
+  }
+  .container {
+    width: min(1440px, 100%);
+    margin: 0 auto;
+    padding-inline: var(--padding);
+  }
+  header {
+    border-bottom: 1px solid var(--gray);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--padding-nav);
+    .logo-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      .logo-name {
+        font-size: 30px;
+        display: none;
+        @media (min-width: 768px) {
+          display: block;
+        }
+      }
+    }
+    .link-home {
+      font-size: 20px;
+    }
+  }
+  section {
+    padding-block: 5rem;
+  }
+}
+
+@layer components {
+  .hero {
+    background-color: var(--gray);
+    min-height: 500px;
+    .hero-content {
+      display: grid;
+      justify-content: center;
+      gap: 3.5rem;
+      grid-template-columns: 1fr;
+      @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media (min-width: 1024px) {
+          align-items: start;
+          grid-column: 1/2;
+          grid-row: 1/2;
+        }
+
+        .hero-title {
+          text-wrap: balance;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          @media (min-width: 1024px) {
+            text-align: start;
+          }
+        }
+        .hero-subtitle {
+          /* width: 50%; */
+          margin-bottom: 2rem;
+        }
+        .hero-btn {
+          background-color: var(--orange);
+          color: var(--white);
+          padding: 0.5rem 1rem;
+          font-size: 18px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+      .hero-image {
+        /* grid-column: 2/3; */
+        max-height: 550px;
+        justify-self: center;
+      }
+    }
+  }
+  .recipes-title {
+    margin-bottom: 0.5rem;
+  }
+  .recipes-subtitle {
+    margin-bottom: 3.5rem;
+  }
+  .recipes-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem 1rem;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .recipe {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid var(--gray);
+      box-shadow: var(--shadow);
+      transition: scale 0.2s ease-in-out;
+      img {
+        transition: scale 0.2s ease-in-out;
+      }
+      .recipe-body {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex: 1;
+        padding: 1.5rem 1rem;
+        .recipe-name {
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+        }
+        .recipe-information {
+          display: flex;
+          margin-top: auto;
+
+          align-items: center;
+          justify-content: start;
+          gap: 2rem;
+          margin-bottom: 1.5rem;
+          .recipe-data {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+          }
+        }
+        .btn {
+          background-color: var(--orange);
+          color: var(--white);
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+      &:hover {
+        img {
+          scale: 1.01;
+        }
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .text {
+    font-size: 1rem;
+  }
+  .text-md {
+    font-size: 18px;
+    @media (min-width: 1024px) {
+      font-size: 20px;
+    }
+  }
+  .text-lg {
+    font-size: 20px;
+    @media (min-width: 1024px) {
+      font-size: 24px;
+    }
+  }
+  .text-xl {
+    font-size: 30px;
+    @media (min-width: 1024px) {
+      font-size: 48px;
+    }
+  }
+  .text-2xl {
+    font-size: 36px;
+    @media (min-width: 1024px) {
+      font-size: 60px;
+    }
+  }
+}
+
+/* UTILITY CLASS */

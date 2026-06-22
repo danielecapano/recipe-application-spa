@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/recipe.css" />
+    <script src="./scripts/recipe.js" defer type="module"></script>
+    <title>Recipe</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo-group">
+            <img src="./assets/logo.svg" alt="logo" class="logo" />
+            <p class="logo-name">Nuxtcipes</p>
+          </div>
+          <a href="index.html" class="link-home">Home</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="recipe">
+        <div class="wrapper">
+          <div class="recipe-content">
+            <h1 class="recipe-title text-2xl"></h1>
+            <div class="recipe-information text-md">
+              <div class="recipe-data">
+                <img src="./assets/clock.svg" alt="clock" class="icon" />
+                <span id="time">15</span>
+              </div>
+              <div class="recipe-data">
+                <img src="./assets/fire.svg" alt="fire" class="icon" />
+                <span id="calories"></span>
+              </div>
+              <div class="recipe-data">
+                <img src="./assets/star.svg" alt="star" class="icon" />
+                <span id="rating"></span>
+              </div>
+            </div>
+            <div class="divisor"></div>
+            <div class="recipe-image">
+              <img
+                class="image"
+                src="https://cdn.dummyjson.com/recipe-images/1.webp"
+                alt="image"
+              />
+            </div>
+            <div class="ingredients">
+              <h3 class="ingredients-title text-xl">Ingredients</h3>
+              <ul class="ingredients-list"></ul>
+            </div>
+            <div class="instructions">
+              <h3 class="instructions-title text-xl">Instructions</h3>
+              <ul class="instructions-list"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

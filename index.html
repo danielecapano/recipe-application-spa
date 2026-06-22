@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/recipe.css" />
+    <script src="./scripts/script.js" defer type="module"></script>
+    <title>Recipe application</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo-group">
+            <img src="./assets/logo.svg" alt="logo" class="logo" />
+            <p class="logo-name">Vanillacipes</p>
+          </div>
+          <button class="link-home">Home</>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div id="main-page">
+        <section class="hero">
+          <div class="container">
+            <div class="hero-content">
+              <img
+                src="./assets/hero-image.webp"
+                alt="image"
+                class="hero-image"
+              />
+              <div class="hero-content-text">
+                <h1 class="hero-title text-2xl">
+                  Master the Kitchen with Ease: Unleash Your Inner Chef Today!
+                </h1>
+                <h3 class="hero-subtitle text-lg">
+                  Discover recipes helping you to find the easiest way to cook.
+                </h3>
+                <a class="hero-btn" href="#recipes-section">Browse Recipes</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="recipes" id="recipes-section">
+          <div class="container">
+            <div class="recipes-content">
+              <h2 class="recipes-title text-xl">Discover, Create, Share</h2>
+              <h3 class="recipes-subtitle text-lg">
+                Check out our most popular recipes!
+              </h3>
+              <div class="recipes-list"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="recipe" id="recipe-section" hidden>
+        <div class="wrapper">
+          <div class="recipe-content">
+            <h1 class="recipe-title text-2xl"></h1>
+            <div class="recipe-information text-md">
+              <div class="recipe-data">
+                <img src="./assets/clock.svg" alt="clock" class="icon" />
+                <span id="time">15</span>
+              </div>
+              <div class="recipe-data">
+                <img src="./assets/fire.svg" alt="fire" class="icon" />
+                <span id="calories"></span>
+              </div>
+              <div class="recipe-data">
+                <img src="./assets/star.svg" alt="star" class="icon" />
+                <span id="rating"></span>
+              </div>
+            </div>
+            <div class="divisor"></div>
+            <div class="recipe-image">
+              <img
+                class="image"
+                src="https://cdn.dummyjson.com/recipe-images/1.webp"
+                alt="image"
+              />
+            </div>
+            <div class="ingredients">
+              <h3 class="ingredients-title text-xl">Ingredients</h3>
+              <ul class="ingredients-list"></ul>
+            </div>
+            <div class="instructions">
+              <h3 class="instructions-title text-xl">Instructions</h3>
+              <ul class="instructions-list"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
