@@ -77,12 +77,3 @@ export function renderRecipeDetails(
     )
     .join("");
 }
-
-export function showRecipeDetails(recipes, recipe) {
-  recipes.hidden = true;
-  recipe.hidden = false;
-}
-export function showIndex(recipes, recipe) {
-  recipes.hidden = false;
-  recipe.hidden = true;
-}

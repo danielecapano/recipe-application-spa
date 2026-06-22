@@ -136,15 +136,6 @@
         <p>Tempo di preparazione: ${recipe.time}</p>
         `;
       }
-
-      function getRecipeId() {
-        return Number(location.pathname.split("/")[2]);
-      }
-
-      function navigate(url) {
-        history.pushState({}, "", url);
-        handleRoute();
-      }
     </script>
   </body>
 </html>
